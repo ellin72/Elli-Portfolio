@@ -76,20 +76,26 @@ export const Contact = () => {
         {
             icon: '📧',
             label: 'Email',
-            value: 'hello@example.com',
-            href: 'mailto:hello@example.com',
+            value: 'shitunaelin@gmail.com',
+            href: 'mailto:shitunaelin@gmail.com',
         },
         {
             icon: '💼',
             label: 'LinkedIn',
-            value: 'linkedin.com/in/ellin',
-            href: 'https://linkedin.com',
+            value: 'elli-shituna-20877b143',
+            href: 'https://linkedin.com/in/elli-shituna-20877b143',
         },
         {
             icon: '𝐆',
             label: 'GitHub',
-            value: 'github.com/ellin',
-            href: 'https://github.com',
+            value: 'github.com/ellin72',
+            href: 'https://github.com/ellin72',
+        },
+        {
+            icon: '📱',
+            label: 'Phone',
+            value: '+264817244041',
+            href: 'tel:+264817244041',
         },
     ];
 

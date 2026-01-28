@@ -42,7 +42,7 @@ export const Footer = () => {
                         <h4 className="text-lg font-semibold mb-6 text-white">Connect</h4>
                         <div className="flex space-x-4">
                             <a
-                                href="https://github.com"
+                                href="https://github.com/ellin72"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-indigo-600 transition-colors flex items-center justify-center text-gray-400 hover:text-white"
@@ -51,7 +51,7 @@ export const Footer = () => {
                                 <span className="text-lg">𝐆</span>
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://linkedin.com/in/elli-shituna-20877b143"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-indigo-600 transition-colors flex items-center justify-center text-gray-400 hover:text-white"
@@ -60,11 +60,18 @@ export const Footer = () => {
                                 <span className="text-lg">in</span>
                             </a>
                             <a
-                                href="mailto:hello@example.com"
+                                href="mailto:shitunaelin@gmail.com"
                                 className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-indigo-600 transition-colors flex items-center justify-center text-gray-400 hover:text-white"
                                 aria-label="Email"
                             >
                                 <span className="text-lg">✉</span>
+                            </a>
+                            <a
+                                href="tel:+264817244041"
+                                className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-indigo-600 transition-colors flex items-center justify-center text-gray-400 hover:text-white"
+                                aria-label="Phone"
+                            >
+                                <span className="text-lg">📱</span>
                             </a>
                         </div>
                     </div>
