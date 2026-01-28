@@ -9,6 +9,7 @@
         ],
         "module": "ESNext",
         "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         /* Bundler mode */
