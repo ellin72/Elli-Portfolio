@@ -1,12 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export const Navbar = () => {
     const [isDark, setIsDark] = useState(false);
 
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setIsDark(savedTheme === 'dark');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    }, []);
+
     const toggleDarkMode = () => {
         setIsDark(!isDark);
-        if (!isDark) {
+        const newTheme = !isDark ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+        if (newTheme === 'dark') {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');

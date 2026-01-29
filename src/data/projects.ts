@@ -16,7 +16,7 @@ export const projects: Project[] = [
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
         technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         github: "https://github.com/ellin72/Elli-Portfolio",
-        liveDemo: "https://ellin72-portfolio.vercel.app",
+        liveDemo: "https://elli-portfolio.vercel.app/",
     },
     {
         id: 2,
