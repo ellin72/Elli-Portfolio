@@ -46,7 +46,7 @@ export const Hero = () => {
                             className="mb-8"
                         >
                             <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 text-indigo-600 dark:text-indigo-300 text-sm font-semibold border border-indigo-200 dark:border-indigo-800/50">
-                                ✨ Welcome to my portfolio
+                                ✨ Full Stack Developer
                             </span>
                         </motion.div>
 
@@ -66,9 +66,9 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.6 }}
-                            className="text-2xl md:text-3xl text-indigo-600 dark:text-indigo-400 mb-6 font-semibold"
+                            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 font-medium"
                         >
-                            Full Stack Developer
+                            Crafting Digital Solutions with React, TypeScript & Modern Web Technologies
                         </motion.h2>
 
                         <motion.p
@@ -77,8 +77,29 @@ export const Hero = () => {
                             transition={{ delay: 0.5, duration: 0.6 }}
                             className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg leading-relaxed"
                         >
-                            Building scalable, clean, and modern web applications with cutting-edge technologies. Passionate about creating exceptional user experiences and writing maintainable code.
+                            I build scalable, high-performance web applications with clean code and exceptional UX. Specialized in full-stack development using cutting-edge technologies.
                         </motion.p>
+
+                        {/* Quick Stats */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.55, duration: 0.6 }}
+                            className="flex gap-8 mb-8"
+                        >
+                            <div>
+                                <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">10+</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">Projects Built</p>
+                            </div>
+                            <div>
+                                <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">3+</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">Years Experience</p>
+                            </div>
+                            <div>
+                                <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">100%</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">Dedication</p>
+                            </div>
+                        </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
@@ -98,12 +119,12 @@ export const Hero = () => {
                                 variant="outline"
                                 size="lg"
                             >
-                                Contact Me
+                                Get In Touch
                             </Button>
                         </motion.div>
                     </motion.div>
 
-                    {/* Right Column - Illustration */}
+                    {/* Right Column - Profile Image */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -111,12 +132,26 @@ export const Hero = () => {
                         className="hidden md:flex items-center justify-center"
                     >
                         <motion.div
-                            animate={{ y: [0, -30, 0] }}
+                            animate={{ y: [0, -20, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                            className="relative w-full h-full max-w-md"
+                            className="relative w-full h-full max-w-sm"
                         >
-                            <div className="w-full aspect-square bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl shadow-2xl shadow-indigo-500/50 flex items-center justify-center text-8xl">
-                                💻
+                            {/* Gradient Border */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-1 blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                            
+                            {/* Profile Card */}
+                            <div className="relative bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
+                                <img
+                                    src="/assets/images/profile.jpg"
+                                    alt="Elli N Shituna - Full Stack Developer"
+                                    className="w-full h-full object-cover"
+                                />
+                                
+                                {/* Overlay Badge */}
+                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                                    <p className="text-white font-semibold text-lg">Open to Opportunities</p>
+                                    <p className="text-indigo-300 text-sm">Available for Contract & Full-time</p>
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
