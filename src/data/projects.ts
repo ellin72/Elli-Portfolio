@@ -15,7 +15,7 @@ export const projects: Project[] = [
         description: "Modern, responsive portfolio website with smooth animations, dark mode, and SEO optimization. Built to showcase projects and skills with an elegant design.",
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
         technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        github: "https://github.com/ellin72",
+        github: "https://github.com/ellin72/Elli-Portfolio",
         liveDemo: "https://ellin72-portfolio.vercel.app",
     },
     {
@@ -24,8 +24,8 @@ export const projects: Project[] = [
         description: "Collaborative task management application with real-time updates, team collaboration features, and intuitive task organization to boost productivity.",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
         technologies: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
-        github: "https://github.com/ellin72/task-management-app",
-        liveDemo: "https://task-management-app.vercel.app",
+        github: "https://github.com/ellin72/Task-Management-App",
+        liveDemo: "https://task-management-app-b9914.web.app",
     },
     {
         id: 3,

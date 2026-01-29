@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SectionTitle } from '../components/SectionTitle';
 import { Button } from '../components/Button';
+import { sendContactEmail } from '../services/emailService';
 
 interface FormData {
     name: string;
@@ -18,6 +19,8 @@ export const Contact = () => {
 
     const [errors, setErrors] = useState<Partial<FormData>>({});
     const [submitted, setSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const validateForm = (): boolean => {
         const newErrors: Partial<FormData> = {};
@@ -63,13 +66,27 @@ export const Contact = () => {
         e.preventDefault();
 
         if (validateForm()) {
-            console.log('Form submitted:', formData);
+            handleSendEmail();
+        }
+    };
+
+    const handleSendEmail = async () => {
+        setIsLoading(true);
+        setSubmitError(null);
+
+        const result = await sendContactEmail(formData);
+
+        if (result.success) {
             setSubmitted(true);
             setFormData({ name: '', email: '', message: '' });
 
             // Reset success message after 3 seconds
             setTimeout(() => setSubmitted(false), 3000);
+        } else {
+            setSubmitError(result.message || 'Failed to send message');
         }
+
+        setIsLoading(false);
     };
 
     const contactLinks = [
@@ -179,6 +196,18 @@ export const Contact = () => {
                                 </motion.div>
                             )}
 
+                            {submitError && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="mb-6 p-4 rounded-lg bg-red-100 dark:bg-red-900 border border-red-300 dark:border-red-700"
+                                >
+                                    <p className="text-red-700 dark:text-red-300 font-semibold">
+                                        ✗ {submitError}
+                                    </p>
+                                </motion.div>
+                            )}
+
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 {/* Name Field */}
                                 <div>
@@ -250,8 +279,9 @@ export const Contact = () => {
                                     type="submit"
                                     variant="primary"
                                     className="w-full"
+                                    disabled={isLoading}
                                 >
-                                    Send Message
+                                    {isLoading ? 'Sending...' : 'Send Message'}
                                 </Button>
                             </form>
                         </div>

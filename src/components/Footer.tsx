@@ -1,8 +1,12 @@
+import { SponsorSection } from '../sections/SponsorSection';
+
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-gradient-to-b from-gray-900 to-gray-950 dark:from-gray-900 dark:to-black text-white py-16 border-t border-gray-800/50">
+        <>
+            <SponsorSection />
+            <footer className="bg-gradient-to-b from-gray-900 to-gray-950 dark:from-gray-900 dark:to-black text-white py-16 border-t border-gray-800/50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                     {/* Brand */}
@@ -87,5 +91,6 @@ export const Footer = () => {
                 </div>
             </div>
         </footer>
+        </>
     );
 };
