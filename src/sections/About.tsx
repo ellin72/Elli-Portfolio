@@ -73,7 +73,7 @@ export const About = () => {
                             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-75"></div>
                             <div className="relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
                                 <img
-                                    src="/assets/images/profile.jpg"
+                                    src="/assets/images/bmc_qr.png"
                                     alt="Elli N Shituna"
                                     className="w-full h-auto object-cover"
                                 />

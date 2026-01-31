@@ -33,7 +33,7 @@ export const projects: Project[] = [
         description: "Full-stack e-commerce platform with real-time inventory management, secure payment integration, and comprehensive admin dashboard for store management.",
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=500&h=300&fit=crop",
         technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-        github: "https://github.com/ellin72/ecommerce-platform",
-        liveDemo: "https://ecommerce-platform.vercel.app",
+        github: "https://github.com/ellin72/E-Commerce-Platform",
+        liveDemo: "https://e-commerce-platform-lac-ten.vercel.app/",
     },
 ];
