@@ -52,8 +52,11 @@ export const sendContactEmail = async (formData: EmailFormData): Promise<EmailRe
         }
 
         const response = await emailjs.send(serviceId, templateId, {
+            // Common EmailJS template variables – ensure your template uses one of these
             from_name: formData.name,
+            name: formData.name,
             from_email: formData.email,
+            reply_to: formData.email,
             message: formData.message,
             to_email: 'shitunaelin@gmail.com', // Your email address
         });
