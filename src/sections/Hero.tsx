@@ -122,7 +122,7 @@ export const Hero = () => {
                                 Hire Me
                             </Button>
                             <Button
-                                href="/blog"
+                                to="/blog"
                                 variant="ghost"
                                 size="lg"
                             >

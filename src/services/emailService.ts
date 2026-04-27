@@ -16,11 +16,19 @@ declare global {
 const initializeEmailJS = () => {
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
     if (!publicKey) {
-        console.warn('EmailJS public key not configured');
         return false;
     }
     emailjs.init(publicKey);
     return true;
+};
+
+const buildMailtoLink = (formData: EmailFormData) => {
+    const subject = encodeURIComponent(`Portfolio contact from ${formData.name || 'Website Visitor'}`);
+    const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+    );
+
+    return `mailto:shitunaelin@gmail.com?subject=${subject}&body=${body}`;
 };
 
 interface EmailFormData {
@@ -37,17 +45,16 @@ interface EmailResponse {
 
 export const sendContactEmail = async (formData: EmailFormData): Promise<EmailResponse> => {
     try {
-        // Initialize if not already done
-        initializeEmailJS();
+        const hasEmailJsPublicKey = initializeEmailJS();
 
         const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
-        if (!serviceId || !templateId) {
+        if (!hasEmailJsPublicKey || !serviceId || !templateId) {
+            window.location.href = buildMailtoLink(formData);
             return {
-                success: false,
-                message: 'Email service not configured',
-                error: 'Missing EmailJS configuration',
+                success: true,
+                message: 'Opened your email app to send this message.',
             };
         }
 

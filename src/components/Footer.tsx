@@ -1,4 +1,5 @@
 import { SponsorSection } from '../sections/SponsorSection';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -24,24 +25,24 @@ export const Footer = () => {
                         <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
                         <ul className="space-y-3 text-gray-400">
                             <li>
-                                <a href="#projects" className="hover:text-indigo-400 transition-colors text-sm">
+                                <Link to="/#projects" className="hover:text-indigo-400 transition-colors text-sm">
                                     Projects
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/#writing" className="hover:text-indigo-400 transition-colors text-sm">
+                                <Link to="/#writing" className="hover:text-indigo-400 transition-colors text-sm">
                                     Writing Skills
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/blog" className="hover:text-indigo-400 transition-colors text-sm">
+                                <Link to="/blog" className="hover:text-indigo-400 transition-colors text-sm">
                                     Blog
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#contact" className="hover:text-indigo-400 transition-colors text-sm">
+                                <Link to="/#contact" className="hover:text-indigo-400 transition-colors text-sm">
                                     Contact
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

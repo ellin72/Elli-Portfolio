@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { SectionTitle } from '../components/SectionTitle';
 import { Button } from '../components/Button';
@@ -9,6 +9,84 @@ interface FormData {
     email: string;
     message: string;
 }
+
+const contactLinks = [
+    {
+        icon: '📧',
+        label: 'Email',
+        value: 'shitunaelin@gmail.com',
+        href: 'mailto:shitunaelin@gmail.com',
+    },
+    {
+        icon: '💼',
+        label: 'LinkedIn',
+        value: 'elli-shituna-20877b143',
+        href: 'https://linkedin.com/in/elli-shituna-20877b143',
+    },
+    {
+        icon: '𝐆',
+        label: 'GitHub',
+        value: 'github.com/ellin72',
+        href: 'https://github.com/ellin72',
+    },
+    {
+        icon: '📱',
+        label: 'Phone',
+        value: '+264817244041',
+        href: 'tel:+264817244041',
+    },
+] as const;
+
+const ContactInfo = memo(() => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+        >
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+                Contact Information
+            </h3>
+
+            <div className="space-y-6 mb-8">
+                {contactLinks.map((link, index) => (
+                    <motion.a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex items-start group cursor-pointer"
+                    >
+                        <span className="text-4xl mr-4 group-hover:scale-110 transition-transform">{link.icon}</span>
+                        <div>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wide">
+                                {link.label}
+                            </p>
+                            <p className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                {link.value}
+                            </p>
+                        </div>
+                    </motion.a>
+                ))}
+            </div>
+
+            <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="text-gray-600 dark:text-gray-400"
+            >
+                I'm always open to new opportunities and collaboration. Feel free to reach out through any of the channels above, or use the contact form to send me a message directly.
+            </motion.p>
+        </motion.div>
+    );
+});
 
 export const Contact = () => {
     const [formData, setFormData] = useState<FormData>({
@@ -89,33 +167,6 @@ export const Contact = () => {
         setIsLoading(false);
     };
 
-    const contactLinks = [
-        {
-            icon: '📧',
-            label: 'Email',
-            value: 'shitunaelin@gmail.com',
-            href: 'mailto:shitunaelin@gmail.com',
-        },
-        {
-            icon: '💼',
-            label: 'LinkedIn',
-            value: 'elli-shituna-20877b143',
-            href: 'https://linkedin.com/in/elli-shituna-20877b143',
-        },
-        {
-            icon: '𝐆',
-            label: 'GitHub',
-            value: 'github.com/ellin72',
-            href: 'https://github.com/ellin72',
-        },
-        {
-            icon: '📱',
-            label: 'Phone',
-            value: '+264817244041',
-            href: 'tel:+264817244041',
-        },
-    ];
-
     return (
         <section
             id="contact"
@@ -128,53 +179,7 @@ export const Contact = () => {
                 />
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Contact Information */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-                            Contact Information
-                        </h3>
-
-                        <div className="space-y-6 mb-8">
-                            {contactLinks.map((link, index) => (
-                                <motion.a
-                                    key={link.label}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="flex items-start group cursor-pointer"
-                                >
-                                    <span className="text-4xl mr-4 group-hover:scale-110 transition-transform">{link.icon}</span>
-                                    <div>
-                                        <p className="text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wide">
-                                            {link.label}
-                                        </p>
-                                        <p className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                            {link.value}
-                                        </p>
-                                    </div>
-                                </motion.a>
-                            ))}
-                        </div>
-
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
-                            className="text-gray-600 dark:text-gray-400"
-                        >
-                            I'm always open to new opportunities and collaboration. Feel free to reach out through any of the channels above, or use the contact form to send me a message directly.
-                        </motion.p>
-                    </motion.div>
+                    <ContactInfo />
 
                     {/* Contact Form */}
                     <motion.div
