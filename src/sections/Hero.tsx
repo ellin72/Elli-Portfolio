@@ -46,7 +46,7 @@ export const Hero = () => {
                             className="mb-8"
                         >
                             <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 text-indigo-600 dark:text-indigo-300 text-sm font-semibold border border-indigo-200 dark:border-indigo-800/50">
-                                ✨ Full Stack Developer
+                                ✨ Developer + Writing Specialist
                             </span>
                         </motion.div>
 
@@ -68,7 +68,7 @@ export const Hero = () => {
                             transition={{ delay: 0.4, duration: 0.6 }}
                             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 font-medium"
                         >
-                            Crafting Digital Solutions with React, TypeScript & Modern Web Technologies
+                            Building Modern Web Experiences and High-Quality Writing Content
                         </motion.h2>
 
                         <motion.p
@@ -77,7 +77,7 @@ export const Hero = () => {
                             transition={{ delay: 0.5, duration: 0.6 }}
                             className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg leading-relaxed"
                         >
-                            I build scalable, high-performance web applications with clean code and exceptional UX. Specialized in full-stack development using cutting-edge technologies.
+                            I create scalable web products and professional writing assets, from portfolio-ready applications to CV, blog, and research-focused content.
                         </motion.p>
 
                         {/* Quick Stats */}
@@ -119,7 +119,14 @@ export const Hero = () => {
                                 variant="outline"
                                 size="lg"
                             >
-                                Get In Touch
+                                Hire Me
+                            </Button>
+                            <Button
+                                href="/blog"
+                                variant="ghost"
+                                size="lg"
+                            >
+                                Read Writing Samples
                             </Button>
                         </motion.div>
                     </motion.div>
